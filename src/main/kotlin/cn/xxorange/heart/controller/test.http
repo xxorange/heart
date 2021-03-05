@@ -1,0 +1,19 @@
+###
+GET http://localhost:8080/test
+###
+POST http://localhost:8080/test
+Content-Type: application/json
+
+{
+  "password": "123"
+}
+###
+PUT http://localhost:8080/test/123
+Content-Type: application/json
+
+{
+  "password": "123456789"
+}
+
+###
+DELETE http://localhost:8080/test/123

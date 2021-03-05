@@ -6,7 +6,14 @@ plugins {
     kotlin("jvm") version "1.4.30"
     kotlin("plugin.spring") version "1.4.30"
     kotlin("plugin.jpa") version "1.4.30"
+    kotlin("plugin.allopen") version "1.4.30"
 }
+allOpen {
+    annotation("javax.persistence.Entity")
+    annotation("javax.persistence.Embeddable")
+    annotation("javax.persistence.MappedSuperclass")
+}
+
 
 group = "cn.xxorange"
 version = "0.0.1-SNAPSHOT"
@@ -19,7 +26,11 @@ configurations {
 }
 
 repositories {
+    mavenLocal()
+    maven(url = "https://mirrors.huaweicloud.com/repository/maven")
     mavenCentral()
+    jcenter()
+    google()
 }
 
 dependencies {
